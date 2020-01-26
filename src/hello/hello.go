@@ -17,13 +17,25 @@ func get_random_number(min, max int) int {
     return rand.Intn(max - min + 1) + min
 }
 
+// Named return values! 'name' is returned by default and is available as
+// a variable in the function.
+func get_random_name() (name string) {
+    rand.Seed(time.Now().UnixNano())
+    names := []string{
+        "Bob", "Jane", "John", "Rob",
+    }
+    name = names[rand.Intn(len(names))]
+    return
+}
+
 // "A function can return any number of results"
 func get_three_things() (string, string, string) {
     return "thing 1", "thing 2", "thing 3"
 }
 
 func main() {
-    fmt.Println("hello, world\n")
+    var name = get_random_name()
+    fmt.Println("hello, ", name)
     fmt.Println("The time is currently ", time.Now())
     fmt.Println("Here is a random number between 3 and 10: ", get_random_number(3, 10))
 
