@@ -4,6 +4,7 @@ import (
     "fmt"
     "time"
     "math/rand"
+    "math/cmplx"
 )
 
 // "When two or more consecutive named function parameters share a type,
@@ -45,4 +46,6 @@ func main() {
     fmt.Println("Here is the first thing: ", first_thing)
     fmt.Println("Here is the second thing: ", second_thing)
     fmt.Println("Here is the third thing: ", third_thing)
+
+    var a_complex_thing complex128 = cmplx.Sqrt(-5 + 12i)
 }
